@@ -8,6 +8,17 @@ export const ClockBodyWrapper = styled.div`
   position: relative;
 `;
 
+export const CenterCircle = styled.div`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 1;
+`;
+
 export const Pin = styled.div`
   position: absolute;
   width: 2px;
