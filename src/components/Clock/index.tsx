@@ -42,8 +42,12 @@ export default function Clock() {
     }
   }, []);
 
+  const mouseOutHandler = useCallback(() => {
+    setTooltipDisplay(false);
+  }, []);
+
   return (
-    <ClockWrapper ref={clockRef} onMouseMove={mouseHandler}>
+    <ClockWrapper ref={clockRef} onMouseLeave={mouseOutHandler} onMouseMove={mouseHandler}>
       <ClockBody />
       {clock && (
         <>

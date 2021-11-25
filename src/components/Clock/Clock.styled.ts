@@ -45,12 +45,12 @@ export const ToolTipWrapper = styled.div`
   &::after {
     content: '';
     position: absolute;
-    bottom: 16px;
-    left: 0;
+    bottom: 12px;
+    left: -5px;
     width: 10px;
     height: 10px;
     background-color: #444;
-    transform: translate3d(-50%, 50%, 0) rotate(45deg);
+    transform: rotate(45deg);
   }
 `;
 

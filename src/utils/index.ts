@@ -39,7 +39,7 @@ export function getDegree(clock: ClockArgs): [number, number, number] {
   const minuteAddDeg = 6 * (second / 60);
   const minuteDeg = minute * 6 + minuteAddDeg;
 
-  const hourAddDeg = 30 * (minute / 60);
+  const hourAddDeg = 30 * (minute / 60 + second / 3600);
   const hourForDeg = hour >= 12 ? hour - 12 : hour;
   const hourDeg = hourForDeg * 30 + hourAddDeg;
 
