@@ -1,6 +1,8 @@
 # Analog Clock Project
 
-![clock](assets/images/README/clock.png)
+<p align="center">
+  <img src="assets/images/README/clock.png" alt="clock">
+</p>
 
 <br>
 
