@@ -1,4 +1,4 @@
-import { objShallowCompare, getDegree } from '../utils';
+import { objShallowCompare, getDegree, getLocaleString } from '../utils';
 
 describe('util 얕은 비교 함수 검증', () => {
   const origin = {
@@ -35,5 +35,16 @@ describe('util getDegree 함수 검증', () => {
     const before = getDegree({ hour: 5, minute: 10, second: 11 });
     const after = getDegree({ hour: 17, minute: 10, second: 11 });
     expect(after).toMatchObject(before);
+  });
+});
+
+describe('util getLocaleString 함수 검증', () => {
+  it('오전 검증', () => {
+    const result = getLocaleString({ hour: 0, minute: 0, second: 0 });
+    expect(result).toMatch('오전 12시 00분 00초');
+  });
+  it('오후 검증', () => {
+    const result = getLocaleString({ hour: 14, minute: 0, second: 1 });
+    expect(result).toMatch('오후 2시 00분 01초');
   });
 });

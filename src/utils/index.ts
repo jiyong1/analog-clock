@@ -29,9 +29,9 @@ interface IClock {
   second: number;
 }
 
-type GetDegreeArgs = IClock | null;
+type ClockArgs = IClock | null;
 
-export function getDegree(clock: GetDegreeArgs): [number, number, number] {
+export function getDegree(clock: ClockArgs): [number, number, number] {
   if (!clock) return [0, 0, 0];
   const { hour, minute, second } = clock;
   const secondDeg = second * 6;
@@ -44,4 +44,20 @@ export function getDegree(clock: GetDegreeArgs): [number, number, number] {
   const hourDeg = hourForDeg * 30 + hourAddDeg;
 
   return [hourDeg, minuteDeg, secondDeg];
+}
+
+export function getLocaleString(clock: ClockArgs): string {
+  if (!clock) return '';
+  const { hour, minute, second } = clock;
+  let afterNoon = '오전';
+  let changedHour = hour;
+  if (changedHour >= 12) {
+    afterNoon = '오후';
+    changedHour = hour - 12;
+  }
+  if (changedHour === 0) changedHour = 12;
+  const changedMinute = String(minute).padStart(2, '0');
+  const changedSecond = String(second).padStart(2, '0');
+
+  return `${afterNoon} ${changedHour}시 ${changedMinute}분 ${changedSecond}초`;
 }
