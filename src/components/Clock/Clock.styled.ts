@@ -7,38 +7,6 @@ export const ClockWrapper = styled.section`
   margin: 0 auto;
 `;
 
-export const SecondPin = styled.div`
-  position: absolute;
-  bottom: calc(50% - 30px);
-  left: calc(50% - 1px);
-  height: 50%;
-  width: 2px;
-  transform-origin: center calc(100% - 30px);
-  background-color: red;
-`;
-
-export const MinutePin = styled.div`
-  position: absolute;
-  bottom: calc(50% - 30px);
-  left: calc(50% - 5px);
-  height: 40%;
-  width: 10px;
-  transform-origin: center calc(100% - 30px);
-  background-color: black;
-  border-radius: 2px;
-`;
-
-export const HourPin = styled.div`
-  position: absolute;
-  bottom: calc(50% - 30px);
-  left: calc(50% - 5px);
-  height: 30%;
-  width: 14px;
-  transform-origin: center calc(100% - 30px);
-  background-color: black;
-  border-radius: 2px;
-`;
-
 export const Pin = styled.div`
   position: absolute;
   bottom: calc(50% - 30px);
