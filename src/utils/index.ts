@@ -31,16 +31,17 @@ interface IClock {
 
 type GetDegreeArgs = IClock | null;
 
-export function getDegree(clock: GetDegreeArgs): [string, string, string] {
-  if (!clock) return ['', '', ''];
+export function getDegree(clock: GetDegreeArgs): [number, number, number] {
+  if (!clock) return [0, 0, 0];
   const { hour, minute, second } = clock;
-  const secondRotate = `rotate(${second * 6}deg)`;
+  const secondDeg = second * 6;
 
   const minuteAddDeg = 6 * (second / 60);
-  const minuteRotate = `rotate(${minute * 6 + minuteAddDeg}deg)`;
+  const minuteDeg = minute * 6 + minuteAddDeg;
 
   const hourAddDeg = 30 * (minute / 60);
-  const hourRotate = `rotate(${hour * 30 + hourAddDeg}deg)`;
+  const hourForDeg = hour >= 12 ? hour - 12 : hour;
+  const hourDeg = hourForDeg * 30 + hourAddDeg;
 
-  return [hourRotate, minuteRotate, secondRotate];
+  return [hourDeg, minuteDeg, secondDeg];
 }
