@@ -1,16 +1,18 @@
 import GlobalStyle from 'src/style/global';
-import { ClockWrapper } from './main.styled';
+import { Provider } from 'react-redux';
+
+import store from 'src/store';
 
 // components
-import ClockBody from 'src/components/ClockBody';
+import App from './App';
 
 export default function Main() {
   return (
     <>
       <GlobalStyle />
-      <ClockWrapper>
-        <ClockBody />
-      </ClockWrapper>
+      <Provider store={store}>
+        <App />
+      </Provider>
     </>
   );
 }

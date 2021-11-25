@@ -1,9 +1,9 @@
-import { useMemo } from 'react';
+import { useMemo, memo } from 'react';
 import { ClockBodyWrapper } from './Body.styled';
 
 import Indicator from './Indicator';
 
-export default function ClockBody() {
+const ClockBody = memo(function () {
   const pinFixture = useMemo(() => {
     return Array.from({ length: 60 }, (_, idx) => idx);
   }, []);
@@ -15,4 +15,6 @@ export default function ClockBody() {
       })}
     </ClockBodyWrapper>
   );
-}
+});
+
+export default ClockBody;

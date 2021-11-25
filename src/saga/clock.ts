@@ -16,8 +16,7 @@ function* updateClock() {
     if (!objShallowCompare(day, dayState)) {
       yield put(clockActions.updateDay(day));
     }
-
-    yield delay(1000);
+    yield delay(1000 - now.getMilliseconds());
   }
 }
 
