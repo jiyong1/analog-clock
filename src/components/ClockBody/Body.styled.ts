@@ -18,7 +18,7 @@ export const Pin = styled.div`
 
   &::after {
     content: '';
-    width: 4px;
+    width: 5px;
     height: 12px;
     position: absolute;
     top: 5px;
@@ -27,7 +27,7 @@ export const Pin = styled.div`
     background-color: #555;
   }
   &.indicator__big::after {
-    width: 8px;
+    width: 9px;
     height: 20px;
   }
 `;
